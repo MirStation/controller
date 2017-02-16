@@ -8,6 +8,7 @@ use App\Editora;
 class EditoraController extends Controller
 {
     //
+
     public function index() {
     	   $editoras = Editora::all();
 	   return view('editora.index', compact('editoras'));
@@ -20,5 +21,20 @@ class EditoraController extends Controller
     public function armazena() {
     	   Editora::create(request()->all());
     	   return redirect('/editoras');
+    }
+
+    public function show(Editora $editora) {
+    	   return view('editora.show', compact('editora'));
+    }
+
+    public function edicao(Editora $editora) {
+    	   return view('editora.edicao', compact('editora'));
+    }
+
+    public function atualiza(Editora $editora) {
+    	   $editora->nome = request()->input('nome');
+	   $editora->email = request()->input('email');
+	   $editora->save();
+	   return redirect("/editoras/$editora->id");
     }
 }
