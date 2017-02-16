@@ -27,6 +27,7 @@
   <div class="col-md-6">
     <form action="/editoras/{{$editora->id}}" method="POST">
       {{csrf_field()}}
+      {{method_field('PATCH')}}
       <div class="form-group">
 	<label for="nome">Nome</label>
 	<input name="nome" id="nome" type="text" class="form-control"  value="{{$editora->nome}}">

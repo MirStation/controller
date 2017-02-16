@@ -25,4 +25,4 @@ Route::get('/editoras/{editora}', 'EditoraController@show');
 
 Route::get('/editoras/{editora}/edicao', 'EditoraController@edicao');
 
-Route::post('/editoras/{editora}', 'EditoraController@atualiza');
+Route::patch('/editoras/{editora}', 'EditoraController@atualiza');

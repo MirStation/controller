@@ -32,9 +32,8 @@ class EditoraController extends Controller
     }
 
     public function atualiza(Editora $editora) {
-    	   $editora->nome = request()->input('nome');
-	   $editora->email = request()->input('email');
-	   $editora->save();
+    	   $editora->fill(request()->all());
+    	   $editora->save();
 	   return redirect("/editoras/$editora->id");
     }
 }
