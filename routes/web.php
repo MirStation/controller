@@ -26,3 +26,17 @@ Route::get('/editoras/{editora}', 'EditoraController@show');
 Route::get('/editoras/{editora}/edicao', 'EditoraController@edicao');
 
 Route::patch('/editoras/{editora}', 'EditoraController@atualiza');
+
+// Livros
+
+Route::get('/livros', 'LivroController@index');
+
+Route::get('/livros/cria', 'LivroController@cria');
+
+Route::post('/livros', 'LivroController@armazena');
+
+Route::get('/livros/{livro}', 'LivroController@show');
+
+Route::get('/livros/{livro}/edicao', 'LivroController@edicao');
+
+Route::patch('/livros/{livro}', 'LivroController@atualiza');
